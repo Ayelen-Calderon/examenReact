@@ -23,6 +23,7 @@ const Formulario = (props) => {
     const manejarEnvio = e =>{
       e.preventDefault()
       
+if(input.length>6 && input2.length >6){
 
     const cardNueva = {
         id : uuidv4(),
@@ -30,9 +31,14 @@ const Formulario = (props) => {
         texto2:input2
 
       }
-    
-props.onSubmit(cardNueva)    
+      props.onSubmit(cardNueva)
 
+}else  window.alert('error no se puede crear card, revise la cantidad de caracteres');
+
+    
+       
+  
+  
     
     }
 
