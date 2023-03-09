@@ -1,15 +1,16 @@
 
 import { BsFillTrash3Fill } from "react-icons/bs";
+import "../hojas_de_Estilo/card.css"
 
 
 const Card = ({id, texto, texto2, eliminarCard}) => {
   return (
-    <div>
+    <div className="card-contenedor">
         <div className="card-texto">
-           <h1> { texto } </h1> 
-           <h2>
+           <div className="texto1"> { texto } </div> 
+           <div className="texto2">
            { texto2 }  
-           </h2>
+           </div>
 
         </div>
         

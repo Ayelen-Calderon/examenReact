@@ -7,10 +7,11 @@ function App() {
 
   return (
     <div className="App">
+      
 
       <h1>Mascotas</h1>
     
-  <ListarCard/>
+      <ListarCard/>
 
 
     </div>

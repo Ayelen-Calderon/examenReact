@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../hojas_de_Estilo/formulario.css'
 import { v4 as uuidv4} from 'uuid'
+import Swal from 'sweetalert2'
 
 const Formulario = (props) => {
 
@@ -23,23 +24,23 @@ const Formulario = (props) => {
     const manejarEnvio = e =>{
       e.preventDefault()
       
-if(input.length>6 && input2.length >6){
+if(input.length < 3 || input2.length < 6){
 
-    const cardNueva = {
-        id : uuidv4(),
-        texto:input,
-        texto2:input2
+  Swal.fire('No se puede crear card, revise cantidad de caracteres. ')
+     
 
-      }
-      props.onSubmit(cardNueva)
-
-}else  window.alert('error no se puede crear card, revise la cantidad de caracteres');
-
-    
-       
+}else {
   
-  
-    
+  const cardNueva = {
+  id : uuidv4(),
+  texto:input,
+  texto2:input2
+
+}
+props.onSubmit(cardNueva)}
+
+
+
     }
 
   return (

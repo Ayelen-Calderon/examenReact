@@ -1,0 +1,45 @@
+
+.card-contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    min-height: 300px;
+    border: 4px solid rgb(115, 91, 71);
+    border-radius: 20px;
+    margin: 7px;
+    background-color: rgb(240, 238, 214);
+    padding: 5px;
+}
+
+.card-texto{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-wrap:break-word;
+
+}
+.texto1{
+font-size: 18px;
+font-weight: bold;
+color: rgb(217, 150, 50);
+max-width: 250px;
+margin: 20px 0;
+}
+.texto2{
+    font-size: 16px;
+    color: rgb(53, 32, 4);
+    max-width: 250px;
+}
+.Card-icono{
+    
+    width: 25px;
+    height: 25px;
+    color: rgb(179, 24, 1);
+    margin: 10px;
+    cursor: pointer;
+}

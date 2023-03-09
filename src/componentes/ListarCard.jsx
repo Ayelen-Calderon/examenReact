@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Formulario from './Formulario'
 import Card from './Card'
+import '../hojas_de_Estilo/lista-de-card.css'
 
 
 const ListarCard = () => {

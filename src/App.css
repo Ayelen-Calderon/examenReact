@@ -1,0 +1,12 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+h1{
+    font-size: 60px;
+    color: chocolate;
+    font-weight: bold;
+    font-family: sans-serif, Verdana, Geneva, Tahoma;
+}
