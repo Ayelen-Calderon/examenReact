@@ -4,43 +4,37 @@ import { v4 as uuidv4} from 'uuid'
 import Swal from 'sweetalert2'
 
 const Formulario = (props) => {
-
-
-
-    const [input, setInput] = useState("")
-    const [input2, setInput2] = useState("")
+    const [input, setInput] = useState({
+      texto:"",
+      texto2:""
+    })
   
     const manejarCambio = e =>{
-     
-    
-         setInput(e.target.value).trim 
-      
+      console.log(e.target.value);
+         setInput({
+          ...input,
+          [e.target.name] : e.target.value
+    })
     }
-    const manejarCambio2 = e =>{
-       
-        setInput2(e.target.value).trim
-      }
   
     const manejarEnvio = e =>{
       e.preventDefault()
-      
-if(input.length < 3 || input2.length < 6){
+if(input.texto.length < 3 || input.texto2.length < 6){
 
-  Swal.fire('No se puede crear card, revise cantidad de caracteres. ')
+  Swal.fire('No se puede crear card, revise cantidad de caracteres.')
      
 
 }else {
   
   const cardNueva = {
   id : uuidv4(),
-  texto:input,
-  texto2:input2
+  texto: input.texto,
+  texto2:input.texto2
+}
+ props.onSubmit(cardNueva)
+
 
 }
-props.onSubmit(cardNueva)}
-
-
-
     }
 
   return (
@@ -51,20 +45,22 @@ props.onSubmit(cardNueva)}
 onSubmit={manejarEnvio}>
 
 <input className='input-form'
-
+name='texto'
 type="text"
 placeholder='Agregar animal favorito'
-name='texto'
+value={input.texto}
+
 
 onChange={manejarCambio}
 />
 <input className='input-form'
-
+name='texto2'
 type="text"
 placeholder='¿Por que es tu animal favorito?'
-name='texto2 '
+value={input.texto2}
 
-onChange={manejarCambio2}
+
+onChange={manejarCambio}
 />
 <button className='form-boton' > 
     Enviar Respuesta
